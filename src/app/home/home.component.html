@@ -1,11 +1,34 @@
 
- 
- <div class="search-form">
 
-    <div class="inputs-search">
-        <input type="text" class="search" placeholder="Consulte seu livro aqui">
+ <div class="container-fluid search-form">
+    <div class="formualrio">
+     <div class="row">
 
-        <button mat-raised-button color="primary">Buscar Livro</button>
-    </div>
     
+            
+      
+         <div class="col-md-2"></div>
+         <div class="col-md-7">
+            <input  (keydown)="onKeydown($event)"  [(ngModel)]="search" (enter)="searchBooks()" type="text" class="search form-control" placeholder="Consulte seu livro aqui">
+         </div>
+         <div class="col-md-3">
+            <button class="form-control" mat-raised-button color="primary">Buscar Livro</button>
+         </div>
+
+         <div class="col-md-2"></div>
+     </div>
+    </div>
+   
  </div>
+
+ <mat-progress-bar *ngIf="statusLoading"  mode="indeterminate" value="40"></mat-progress-bar>
+
+
+<app-list-books-grid [books]="books"></app-list-books-grid>
+ 
+
+
+ 
+
+ 
+

@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+
+        <div *ngFor="let book of books" class="col-md-3">
+            <img src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="" class="img-thumbnail">
+            <h2>{{book.volumeInfo.title}}</h2>
+
+        </div>
+    
+
+    </div>
+</div>
